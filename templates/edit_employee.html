@@ -1,1 +1,65 @@
-{% extends 'base.html' %}{% block content %}<h2>Edit Employee</h2>{% endblock %}
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST">
+
+<div class="mb-3">
+
+<label>Name</label>
+
+<input
+class="form-control"
+name="name"
+value="{{ employee.name }}"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Email</label>
+
+<input
+class="form-control"
+name="email"
+value="{{ employee.email }}"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Department</label>
+
+<input
+class="form-control"
+name="department"
+value="{{ employee.department }}"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Salary</label>
+
+<input
+class="form-control"
+name="salary"
+value="{{ employee.salary }}"
+required>
+
+</div>
+
+<button class="btn btn-primary">
+Update Employee
+</button>
+
+<a href="/" class="btn btn-secondary">
+Back
+</a>
+
+</form>
+
+{% endblock %}

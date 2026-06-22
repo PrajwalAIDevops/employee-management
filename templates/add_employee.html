@@ -1,1 +1,61 @@
-{% extends 'base.html' %}{% block content %}<h2>Add Employee</h2>{% endblock %}
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST">
+
+<div class="mb-3">
+
+<label>Name</label>
+
+<input
+class="form-control"
+name="name"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Email</label>
+
+<input
+class="form-control"
+name="email"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Department</label>
+
+<input
+class="form-control"
+name="department"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Salary</label>
+
+<input
+class="form-control"
+name="salary"
+required>
+
+</div>
+
+<button class="btn btn-success">
+Save Employee
+</button>
+
+<a href="/" class="btn btn-secondary">
+Back
+</a>
+
+</form>
+
+{% endblock %}

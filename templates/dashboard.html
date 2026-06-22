@@ -1,1 +1,62 @@
-{% extends 'base.html' %}{% block content %}<h1>Dashboard</h1>{% endblock %}
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="/add" class="btn btn-primary mb-3">
+Add Employee
+</a>
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Department</th>
+<th>Salary</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for emp in employees %}
+
+<tr>
+
+<td>{{ emp.id }}</td>
+<td>{{ emp.name }}</td>
+<td>{{ emp.email }}</td>
+<td>{{ emp.department }}</td>
+<td>{{ emp.salary }}</td>
+
+<td>
+
+<a href="/edit/{{ emp.id }}" class="btn btn-warning btn-sm">
+Edit
+</a>
+
+<a href="/delete/{{ emp.id }}"
+class="btn btn-danger btn-sm"
+onclick="return confirm('Delete Employee?')">
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}
